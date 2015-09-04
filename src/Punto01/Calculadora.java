@@ -104,6 +104,10 @@ public class Calculadora {
             System.out.println("0) Salir de Calculadora.....");
             Scanner scanner = new Scanner(System.in);
             opcion = scanner.nextInt();
+            if ((opcion == 2 || opcion == 3 || opcion == 4 || opcion == 5) && arreglo == null){
+                System.out.println("Cantidad de numeros a analizar:");
+                crearArreglo(scanner.nextInt());                            
+            }
             switch (opcion){
                 case 1:{
                     int recalc;
@@ -115,40 +119,16 @@ public class Calculadora {
                     }while (recalc == 1);
                 }break;
                 case 2:{
-                    if (arreglo == null){
-                        System.out.println("Cantidad de numeros a analizar:");
-                        crearArreglo(scanner.nextInt());
-                        System.out.println("El mayor es: " + calcularMayor());
-                    }else{
-                        System.out.println("El mayor es: " + calcularMayor());
-                    }
+                    System.out.println("El mayor es: " + calcularMayor());
                 }break;
                 case 3:{
-                    if (arreglo == null){
-                        System.out.println("Cantidad de numeros a analizar:");
-                        crearArreglo(scanner.nextInt());
-                        System.out.println("El menor es: " + calcularMenor());
-                    }else{
-                        System.out.println("El menor es: " + calcularMenor());
-                    }
+                    System.out.println("El menor es: " + calcularMenor());
                 }break;
                 case 4:{
-                    if (arreglo == null){
-                        System.out.println("Cantidad de numeros a analizar:");
-                        crearArreglo(scanner.nextInt());
-                        System.out.println("El promedio es: " + promediarArreglo());
-                    }else{
-                        System.out.println("El promedio es: " + promediarArreglo());
-                    }
+                    System.out.println("El promedio es: " + promediarArreglo());
                 }break;
                 case 5:{
-                    if (arreglo == null){
-                        System.out.println("Cantidad de numeros a analizar:");
-                        crearArreglo(scanner.nextInt());
-                        System.out.println("La mediana es: " + calcularMediana());
-                    }else{
-                        System.out.println("La mediana es: " + calcularMediana());
-                    }
+                    System.out.println("La mediana es: " + calcularMediana());
                 }break;
                 case 6:{
                     System.out.println("existe arreglo " );
