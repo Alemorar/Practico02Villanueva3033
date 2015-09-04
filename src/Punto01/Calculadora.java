@@ -12,14 +12,6 @@ import java.util.Scanner;
 public class Calculadora {
     private int[] arreglo;
     
-    public int[] getArreglo() {
-        return arreglo;
-    }
-
-    public void setArreglo(int[] arreglo) {
-        this.arreglo = arreglo;
-    }
-    
     public void crearArreglo(int tamaño){
         arreglo = new int[tamaño];
         Scanner scanner = new Scanner(System.in);
@@ -85,9 +77,17 @@ public class Calculadora {
     }
     
     public void mostrarPrimos(){
-        
+        for (int i = 0; i == arreglo.length / 2; i++){//ciclo desde i=2, hasta i=n/2 
+            int contador = 0;
+            if (arreglo[i] % i == 0){//if n es divisible por i 
+                contador = contador + 1;//contador = contador+1 
+            }
+            if (contador > 0){//si contador>0 entonces 
+                //no es primo
+            }
+        }    
     }
-    
+        
     public void menuOpciones(){
         int opcion;
         do{
@@ -151,7 +151,12 @@ public class Calculadora {
             }
         }while (opcion != 0);
     }
+    
+    public int[] getArreglo() {
+        return arreglo;
+    }
 
+    public void setArreglo(int[] arreglo) {
+        this.arreglo = arreglo;
+    }
 }
-
-
