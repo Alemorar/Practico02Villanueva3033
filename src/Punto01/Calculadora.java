@@ -77,7 +77,7 @@ public class Calculadora {
     }
     
     public void mostrarPrimos(){
-        for (int i = 0; i == arreglo.length / 2; i++){//ciclo desde i=2, hasta i=n/2 
+        for (int i = 2; i == arreglo.length / 2; i++){//ciclo desde i=2, hasta i=n/2 
             int contador = 0;
             if (arreglo[i] % i == 0){//if n es divisible por i 
                 contador = contador + 1;//contador = contador+1 
@@ -86,6 +86,17 @@ public class Calculadora {
                 //no es primo
             }
         }    
+    }
+    
+    public boolean esPrimo(int numero){
+        int contador = 2;
+        boolean primo=true;
+        while ((primo) && (contador!=numero)){
+            if (numero % contador == 0)
+                primo = false;
+            contador++;
+        }
+        return primo;
     }
         
     public void menuOpciones(){
@@ -131,7 +142,8 @@ public class Calculadora {
                     System.out.println("La mediana es: " + calcularMediana());
                 }break;
                 case 6:{
-                    System.out.println("existe arreglo " );
+                    System.out.println("procesando numero primos............. " );
+                    
                 }break;
                 case 7:{
                     System.out.println("Cantidad de numeros a analizar:");
