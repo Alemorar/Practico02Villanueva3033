@@ -24,8 +24,6 @@ public class Principal {
        
         productoListUtil.mostrarProductos();
         
-        productoListUtil.buscarProducto(222);
-        
+        productoListUtil.buscarProducto(222);   
     }
-    
 }
