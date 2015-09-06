@@ -5,6 +5,7 @@
  */
 package Punto02.facturacion.dominio;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -21,7 +22,7 @@ public class Factura {
         detalle = new ArrayList<DetalleProducto>();//o lo inicializamos aqui, ambas son validas
     }
     
-    public void agrearDetalle(DetalleProducto dp){
+    public void agregarDetalle(DetalleProducto dp){
         detalle.add(dp);
     }
     
@@ -74,17 +75,24 @@ public class Factura {
     public void setDetalle(ArrayList<DetalleProducto> detalle) {
         this.detalle = detalle;
     }
+    
+    public void mostrarStock(){
+        for (DetalleProducto dp:detalle){
+            System.out.println(dp.getUnProducto().toString());
+        }
+    }
 
     @Override
     public String toString() {
         String salida = "";
         salida = "Numero Factura: " + numFactura + "\n";
-        salida = salida + "Fecha: " + fecha + "\n";
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss a");
+        salida = salida + "Fecha: " + sdf.format(fecha) + "\n";
         salida = salida + "\nCodigo" + "\tDescripcion" + "\tPrecio" + "\tCantidad" + "\tSubTotal";
         for (DetalleProducto dp:detalle){
             salida = salida + dp.toString();
         }
         salida = salida + "\nTotal:\t\t\t\t\t\t" + calcularTotal();
         return salida;
-    } 
+    }
 }

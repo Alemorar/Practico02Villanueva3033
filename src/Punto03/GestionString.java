@@ -32,13 +32,12 @@ public class GestionString {
     
     public void controlarMetodo(){
         Scanner scanner = new Scanner(System.in);
-        int op = 0;
+        String palindromiar;
         do{
-            System.out.println("Ingrese palabra.....");
-            determinarPalindrome(scanner.next());
-            System.out.println("desea ingresar otra? Press '1' ");
-            op = scanner.nextInt();
-        }while (op == 1);
+            System.out.println("Ingrese palabra. 'S'alir");
+            palindromiar = scanner.next();
+            determinarPalindrome(palindromiar);
+        }while (!"s".equals(palindromiar));
         System.out.println("Saliendo del system.......");
     }   
 }

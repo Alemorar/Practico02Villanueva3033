@@ -8,6 +8,7 @@ package Punto02.facturacion.test;
 import Punto02.facturacion.dominio.DetalleProducto;
 import Punto02.facturacion.dominio.Factura;
 import Punto02.facturacion.dominio.Producto;
+import java.util.Date;
 
 
 /**
@@ -18,33 +19,41 @@ public class SistemaFacturacion {
     
     public static void main(String[] args){
         Factura unaFactura = new Factura();
+        unaFactura.setNumFactura(1);
+        unaFactura.setFecha(new Date());
+        
+        unaFactura.mostrarStock();
+        
         Producto primerProducto = new Producto();
-        primerProducto.setCodigo(01);
+        primerProducto.setCodigo(1);
         primerProducto.setNombre("aaa");
         primerProducto.setPrecio(100.0);
         primerProducto.setStock(3);
         
         Producto segundoProducto = new Producto();
-        segundoProducto.setCodigo(02);
+        segundoProducto.setCodigo(2);
         segundoProducto.setNombre("bbb");
         segundoProducto.setPrecio(50.0);
         segundoProducto.setStock(80);
         
         DetalleProducto primerDetalle = new DetalleProducto();
-        primerDetalle.setCantidadProduco(1);
+        primerDetalle.setCantidadProducto(2);
         primerDetalle.setPrecioUnitario(primerProducto.getPrecio());
         primerDetalle.setUnProducto(primerProducto);
+        primerDetalle.actualizarStock();
         
-        unaFactura.agrearDetalle(primerDetalle);//Agregamos el primer detalla con el primer producto
+        unaFactura.agregarDetalle(primerDetalle);//Agregamos el primer detalla con el primer producto
         
         DetalleProducto segundoDetalle = new DetalleProducto();
-        segundoDetalle.setCantidadProduco(50);
+        segundoDetalle.setCantidadProducto(50);
         segundoDetalle.setPrecioUnitario(segundoProducto.getPrecio());
         segundoDetalle.setUnProducto(segundoProducto);
+        segundoDetalle.actualizarStock();
         
-        unaFactura.agrearDetalle(segundoDetalle);//Agregamos el segundo detalle con el segundo producto
+        unaFactura.agregarDetalle(segundoDetalle);//Agregamos el segundo detalle con el segundo producto
         
         System.out.println(unaFactura);
+
 //        System.out.println("El total de la factura " + unaFactura.calcularTotal());
         
     }

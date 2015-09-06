@@ -12,29 +12,24 @@ package Punto02.facturacion.dominio;
 public class DetalleProducto {
     private Producto unProducto;
     private double precioUnitario;
-    private int cantidadProduco;
+    private int cantidadProducto;
     
     public double calcularSubtotal(){
-        return cantidadProduco * precioUnitario;
+        return cantidadProducto * precioUnitario;
     }
     
-    /**
-     * @return the unProducto
-     */
+    public void actualizarStock(){
+        unProducto.setStock(unProducto.getStock() - cantidadProducto);
+    }
+    
     public Producto getUnProducto() {
         return unProducto;
     }
 
-    /**
-     * @param unProducto the unProducto to set
-     */
     public void setUnProducto(Producto unProducto) {
         this.unProducto = unProducto;
     }
 
-    /**
-     * @return the precioUnitario
-     */
     public double getPrecioUnitario() {
         return precioUnitario;
     }
@@ -47,21 +42,21 @@ public class DetalleProducto {
     }
 
     /**
-     * @return the cantidadProduco
+     * @return the cantidadProducto
      */
-    public int getCantidadProduco() {
-        return cantidadProduco;
+    public int getCantidadProducto() {
+        return cantidadProducto;
     }
 
     /**
-     * @param cantidadProduco the cantidadProduco to set
+     * @param cantidadProducto the cantidadProducto to set
      */
-    public void setCantidadProduco(int cantidadProduco) {
-        this.cantidadProduco = cantidadProduco;
+    public void setCantidadProducto(int cantidadProducto) {
+        this.cantidadProducto = cantidadProducto;
     }
 
     @Override
     public String toString() {
-        return "\n" + unProducto.getCodigo() + "\t" + unProducto.getNombre() + "\t\t" + precioUnitario + "\t" + cantidadProduco + "\t\t" + calcularSubtotal();
+        return "\n" + unProducto.getCodigo() + "\t" + unProducto.getNombre() + "\t\t" + precioUnitario + "\t" + cantidadProducto + "\t\t" + calcularSubtotal();
     }   
 }
