@@ -80,11 +80,11 @@ public class Factura {
         String salida = "";
         salida = "Numero Factura: " + numFactura + "\n";
         salida = salida + "Fecha: " + fecha + "\n";
-        salida = salida + "\nCodigo\tDescripcion\tPrecio\tCantidad\tSubTotal";
+        salida = salida + "\nCodigo" + "\tDescripcion" + "\tPrecio" + "\tCantidad" + "\tSubTotal";
         for (DetalleProducto dp:detalle){
-            salida = salida + dp.toString() + "\n";
+            salida = salida + dp.toString();
         }
-        salida = salida + "Total: " + calcularTotal();
+        salida = salida + "\nTotal:\t\t\t\t\t\t" + calcularTotal();
         return salida;
     } 
 }

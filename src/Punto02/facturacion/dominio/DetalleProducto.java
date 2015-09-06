@@ -62,9 +62,6 @@ public class DetalleProducto {
 
     @Override
     public String toString() {
-        return unProducto.getCodigo() + "\t" + unProducto.getNombre() + "\t" + precioUnitario + "\t" + cantidadProduco + "\t" + calcularSubtotal();
-    }
-    
-    
-    
+        return "\n" + unProducto.getCodigo() + "\t" + unProducto.getNombre() + "\t\t" + precioUnitario + "\t" + cantidadProduco + "\t\t" + calcularSubtotal();
+    }   
 }
