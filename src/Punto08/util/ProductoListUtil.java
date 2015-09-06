@@ -6,7 +6,6 @@
 package Punto08.util;
 
 import Punto08.modelo.Producto;
-import Punto08.modelo.Producto;
 import java.util.ArrayList;
 
 /**
@@ -54,6 +53,4 @@ public class ProductoListUtil {
     public void setProductos(ArrayList<Producto> productos) {
         this.productos = productos;
     }
-            
-    
 }
