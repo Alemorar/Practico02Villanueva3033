@@ -59,5 +59,12 @@ public class DetalleProducto {
     public void setCantidadProduco(int cantidadProduco) {
         this.cantidadProduco = cantidadProduco;
     }
+
+    @Override
+    public String toString() {
+        return unProducto.getCodigo() + "\t" + unProducto.getNombre() + "\t" + precioUnitario + "\t" + cantidadProduco + "\t" + calcularSubtotal();
+    }
+    
+    
     
 }

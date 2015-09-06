@@ -74,5 +74,17 @@ public class Factura {
     public void setDetalle(ArrayList<DetalleProducto> detalle) {
         this.detalle = detalle;
     }
-    
+
+    @Override
+    public String toString() {
+        String salida = "";
+        salida = "Numero Factura: " + numFactura + "\n";
+        salida = salida + "Fecha: " + fecha + "\n";
+        salida = salida + "\nCodigo\tDescripcion\tPrecio\tCantidad\tSubTotal";
+        for (DetalleProducto dp:detalle){
+            salida = salida + dp.toString() + "\n";
+        }
+        salida = salida + "Total: " + calcularTotal();
+        return salida;
+    } 
 }

@@ -44,7 +44,8 @@ public class SistemaFacturacion {
         
         unaFactura.agrearDetalle(segundoDetalle);//Agregamos el segundo detalle con el segundo producto
         
-        System.out.println("El total de la factura " + unaFactura.calcularTotal());
+        System.out.println(unaFactura);
+//        System.out.println("El total de la factura " + unaFactura.calcularTotal());
         
     }
     
