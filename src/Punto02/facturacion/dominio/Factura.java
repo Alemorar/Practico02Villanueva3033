@@ -75,17 +75,11 @@ public class Factura {
     public void setDetalle(ArrayList<DetalleProducto> detalle) {
         this.detalle = detalle;
     }
-    
-    public void mostrarStock(){
-        for (DetalleProducto dp:detalle){
-            System.out.println(dp.getUnProducto().toString());
-        }
-    }
 
     @Override
     public String toString() {
         String salida = "";
-        salida = "Numero Factura: " + numFactura + "\n";
+        salida = "\nNumero Factura: " + numFactura + "\n";
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss a");
         salida = salida + "Fecha: " + sdf.format(fecha) + "\n";
         salida = salida + "\nCodigo" + "\tDescripcion" + "\tPrecio" + "\tCantidad" + "\tSubTotal";
