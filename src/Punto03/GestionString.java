@@ -12,8 +12,7 @@ import java.util.Scanner;
  * @author nahuel
  */
 public class GestionString {
-  
-    
+
     public void determinarPalindrome(String cadena){
         boolean band = false;
         for (int i = 0; i < cadena.length() / 2; i++){
