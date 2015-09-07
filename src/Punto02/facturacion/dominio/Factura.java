@@ -80,13 +80,13 @@ public class Factura {
     public String toString() {
         String salida = "";
         salida = "\nNumero Factura: " + numFactura + "\n";
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss a");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy h:mm:ss");
         salida = salida + "Fecha: " + sdf.format(fecha) + "\n";
         salida = salida + "\nCodigo" + "\tDescripcion" + "\tPrecio" + "\tCantidad" + "\tSubTotal";
         for (DetalleProducto dp:detalle){
             salida = salida + dp.toString();
         }
-        salida = salida + "\nTotal:\t\t\t\t\t\t" + calcularTotal();
+        salida = salida + "\n\nTotal:\t\t\t\t\t\t" + calcularTotal();
         return salida;
     }
 }
