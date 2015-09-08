@@ -19,10 +19,10 @@ public class Calculadora {
             System.out.println("Ingrese valor pos: " + i);
             arreglo[i] = scanner.nextInt();
         }
-        visualizarArreglo();
+        visualizarArreglo(arreglo);
     }
     
-    public void visualizarArreglo(){
+    public void visualizarArreglo(int[] arreglo){
         for (int i = 0; i < arreglo.length; i++){
             System.out.println("posicion: " + i + " valor: "+ arreglo[i]);
         }
@@ -50,7 +50,7 @@ public class Calculadora {
     
     public float promediarArreglo(){
         float sumador = 0.0f;
-        float promedio = 0.0f;
+        float promedio;
         for (int i = 0; i < arreglo.length; i++){
             sumador = sumador + arreglo[i];
         }
@@ -58,13 +58,33 @@ public class Calculadora {
         return promedio;
     }
     
-    public float calcularMediana(){
-        float sumador = 0.0f;
-        float mediana = 0.0f;
-        for (int i = 0; i < arreglo.length; i++){
-            sumador = sumador + arreglo[i];
+    public int[] ordenarArreglo(int[] arreglo){
+        int aux;
+        for (int i = 0; i < arreglo.length -1 ; i++){
+            for(int j = i + 1; j < arreglo.length; j++){
+                if(arreglo[j] < arreglo[i]){ // Si el elemento j es menor que el menor:
+                    aux = arreglo[i]; // Se intercambian los elementos
+                    arreglo[i] = arreglo[j]; // de las posiciones i y menor
+                    arreglo[j] = aux; // usando una variable auxiliar. 
+                }   
+            }
         }
-        mediana = sumador / 2;
+        visualizarArreglo(arreglo);
+        return arreglo;
+    }
+    
+    public double calcularMediana(){
+        double mediana;
+        int[] arr = new int[arreglo.length];
+        for (int x = 0; x < arreglo.length; x++){
+            arr[x] = arreglo[x];
+        }
+        ordenarArreglo(arr);
+        if (arr.length % 2 != 0){
+            mediana = arr[Math.abs(arr.length / 2)];
+        }else{
+            mediana = (double)((arr[Math.abs(arr.length / 2) - 1] + arr[Math.abs(arr.length / 2)]) / 2);
+        }
         return mediana;
     }
     
@@ -76,27 +96,12 @@ public class Calculadora {
         return resultado;        
     }
     
-    public void mostrarPrimos(){
-        for (int i = 2; i == arreglo.length / 2; i++){//ciclo desde i=2, hasta i=n/2 
-            int contador = 0;
-            if (arreglo[i] % i == 0){//if n es divisible por i 
-                contador = contador + 1;//contador = contador+1 
-            }
-            if (contador > 0){//si contador>0 entonces 
-                //no es primo
-            }
-        }    
-    }
-    
-    public boolean esPrimo(int numero){
-        int contador = 2;
-        boolean primo=true;
-        while ((primo) && (contador!=numero)){
-            if (numero % contador == 0)
-                primo = false;
-            contador++;
+    public void mostrarPrimo(int numero){
+        for (int i = 0; i < arreglo.length; i++){
+            if (!(arreglo[i] % 2 == 0)){
+                System.out.println(arreglo[i]);
+            }        
         }
-        return primo;
     }
         
     public void menuOpciones(){
@@ -112,10 +117,12 @@ public class Calculadora {
             System.out.println("6) Mostrar primos");
             System.out.println("7) Crear arreglo nuevo");
             System.out.println("8) Visualizar arreglo");
+            System.out.println("9) ....");
+            System.out.println("10) Ordenar arreglo");
             System.out.println("0) Salir de Calculadora.....");
             Scanner scanner = new Scanner(System.in);
             opcion = scanner.nextInt();
-            if ((opcion == 2 || opcion == 3 || opcion == 4 || opcion == 5) && arreglo == null){
+            if ((opcion == 2 || opcion == 3 || opcion == 4 || opcion == 5 || opcion == 6) && arreglo == null){
                 System.out.println("Cantidad de numeros a analizar:");
                 crearArreglo(scanner.nextInt());                            
             }
@@ -154,8 +161,11 @@ public class Calculadora {
                         System.out.println("Cantidad de numeros a analizar:");
                         crearArreglo(scanner.nextInt());
                     }else{
-                        visualizarArreglo();
+                        visualizarArreglo(arreglo);
                     }
+                }break;
+                case 10:{
+                    ordenarArreglo();
                 }break;
                 default:{
                     System.out.println("Saliendo del system.....");

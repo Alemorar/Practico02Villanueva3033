@@ -14,8 +14,8 @@ import java.util.Scanner;
 public class TestGestionString {
     
     public static void main(String[] args){
-        Scanner scanner = new Scanner(System.in);
+        //Scanner scanner = new Scanner(System.in);
         GestionString gestionString = new GestionString();
-        gestionString.controlarMetodo();
+        gestionString.controlarMetodos();
     }
 }
