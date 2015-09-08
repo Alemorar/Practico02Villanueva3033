@@ -68,7 +68,7 @@ public class GestionString {
     public String invertirLetras(String cadena){
         for (int i = 0; i < cadena.length(); i++){
             if (cadena.charAt(i) == Character.toUpperCase(cadena.charAt(i))){
-                cadena.charAt(i) = Character.toLowerCase(cadena.charAt(i));
+                //cadena.charAt(i) = Character.toLowerCase(cadena.charAt(i));
             }else if (cadena.charAt(i) == cadena.toLowerCase().charAt(i)){
                 cadena.substring(i, i).toUpperCase();
             }
