@@ -115,7 +115,7 @@ public class Calculadora {
             System.out.println("4) Promedio");
             System.out.println("5) Mediana");
             System.out.println("6) Mostrar primos");
-            System.out.println("7) Crear arreglo nuevo");
+            System.out.println("7) Nuevo arreglo");
             System.out.println("8) Visualizar arreglo");
             System.out.println("9) ....");
             System.out.println("10) Ordenar arreglo");
@@ -165,7 +165,7 @@ public class Calculadora {
                     }
                 }break;
                 case 10:{
-                    ordenarArreglo();
+                    ordenarArreglo(arreglo);
                 }break;
                 default:{
                     System.out.println("Saliendo del system.....");
