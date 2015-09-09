@@ -103,6 +103,30 @@ public class Calculadora {
             }        
         }
     }
+    
+    public int obtenerPrimos(){
+            int cant = 0;
+            for (int i=0; i < arreglo.length; i++){
+                if (arreglo[i]==1){
+                    System.out.println("EL NUMERO " + arreglo[i]+ " ES PRIMO");
+                }else{
+                    cant = 0;
+                    int num = arreglo[i];
+                    for (int j=num; j!=0; j--){
+                        if (num % j == 0){
+                        cant = cant + 1;
+                    }
+                          
+                    }
+                    if (cant == 2){
+                System.out.println("EL NUMERO " + arreglo[i] + " ES PRIMO");
+                }else{
+                System.out.println("EL NUMERO " + arreglo[i] + " NO ES PRIMO");
+                }
+            }
+            }
+        return cant;   
+        }
         
     public void menuOpciones(){
         int opcion;
@@ -149,8 +173,7 @@ public class Calculadora {
                     System.out.println("La mediana es: " + calcularMediana());
                 }break;
                 case 6:{
-                    System.out.println("procesando numero primos............. " );
-                    
+                    obtenerPrimos();                    
                 }break;
                 case 7:{
                     arreglo = null;
