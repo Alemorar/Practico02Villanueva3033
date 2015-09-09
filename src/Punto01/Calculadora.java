@@ -83,7 +83,7 @@ public class Calculadora {
         if (arr.length % 2 != 0){
             mediana = arr[Math.abs(arr.length / 2)];
         }else{
-            mediana = (double)((arr[Math.abs(arr.length / 2) - 1] + arr[Math.abs(arr.length / 2)]) / 2);
+            mediana = (double)(arr[Math.abs(arr.length / 2) - 1] + arr[Math.abs(arr.length / 2)]) / 2;
         }
         return mediana;
     }
@@ -153,8 +153,7 @@ public class Calculadora {
                     
                 }break;
                 case 7:{
-                    System.out.println("Cantidad de numeros a analizar:");
-                    crearArreglo(scanner.nextInt());
+                    arreglo = null;
                 }break;
                 case 8:{
                     if (arreglo == null){
