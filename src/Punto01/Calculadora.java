@@ -109,7 +109,7 @@ public class Calculadora {
                 }
             }
             if (cant == 2){
-                System.out.println(arreglo[i]);
+                System.out.println("Es primo: " + arreglo[i]);
                 cant = 0;
             }
         }
