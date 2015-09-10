@@ -13,8 +13,8 @@ public class SumatoriaProductoria{
     
     public double resolverSumatoriaA(int n){
         double resultado = 0.0;
-        for (int i = 1;i <= n; i++){
-            resultado = resultado + (Math.pow(2, i) / (3 + 2 * i));
+        for (int k = 1;k <= n; k++){
+            resultado = resultado + (Math.pow(2, k) / (3 + 2 * k));
         }
         return resultado;
     }
