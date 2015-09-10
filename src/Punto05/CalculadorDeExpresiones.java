@@ -24,7 +24,7 @@ public class CalculadorDeExpresiones{
     
     public void resolverProductoriaB(int n){
         Scanner scanner = new Scanner(System.in);
-        double resultado = 0.0;
+        double resultado = 1.0;
         double x = 0.0;
         double y = 0.0;
         System.out.println("Ingrese x: ");
@@ -53,8 +53,42 @@ public class CalculadorDeExpresiones{
         System.out.println("Ingrese indice: ");
         indice = scanner.nextInt();
         for (int i = indice; i <= n; i++){
-            resultado = resultado * ((a * b + c) / Calculadora.calcularFactorial(i));
+            resultado = resultado + ((a * b + c) / Calculadora.calcularFactorial(i));
         }
         System.out.println("El resultado es " + resultado);
+    }
+    
+    public void administrarOpciones(){
+        int opcion;
+        do{
+            System.out.println("********Menu Calculadora**********");
+            System.out.println("Seleccione el Calculo que desee realizar:");
+            System.out.println("1) Sumatoria A");
+            System.out.println("2) Productoria B");
+            System.out.println("3) Sumatoria C");
+            System.out.println("0) Salir de CalculadorDeExpresiones.....");
+            Scanner scanner = new Scanner(System.in);
+            opcion = scanner.nextInt();
+            switch (opcion){
+                case 1:{
+                    System.out.println("ingrese valor hasta");
+                    int hasta = scanner.nextInt();
+                    resolverSumatoriaA(hasta);
+                }break;
+                case 2:{
+                    System.out.println("ingrese valor hasta");
+                    int hasta = scanner.nextInt();
+                    resolverProductoriaB(hasta);
+                }break;
+                case 3:{
+                    System.out.println("ingrese valor hasta");
+                    int hasta = scanner.nextInt();
+                    resolverSumatoriaC(hasta);
+                }break;
+                default:{
+                    System.out.println("Saliendo del system.....");
+                }
+            }
+        }while (opcion != 0);
     }
 }
