@@ -88,7 +88,7 @@ public class Calculadora {
         return mediana;
     }
     
-    public int calcularFactorial(int num){
+    public static int calcularFactorial(int num){
         int resultado = 1;
         for (int i = num; i != 0; i--){
             resultado = resultado * i;
@@ -119,7 +119,7 @@ public class Calculadora {
         int opcion;
         do{
             System.out.println("********Menu Calculadora**********");
-            System.out.println("Seleccione el Calculo que desee realizar: 10) carga arreglo test");
+            System.out.println("Seleccione el Calculo que desee realizar: 10 y 11) carga arreglo test");
             System.out.println("1) Factorial");
             System.out.println("2) Mayor");
             System.out.println("3) Menor");
