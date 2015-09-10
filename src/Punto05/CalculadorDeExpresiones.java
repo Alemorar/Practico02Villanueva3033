@@ -38,6 +38,7 @@ public class CalculadorDeExpresiones{
     }
     
     public void resolverSumatoriaC(int n){
+        Calculadora unaCalcu = new Calculadora();
         Scanner scanner = new Scanner(System.in);
         double resultado = 0.0;
         double a = 0.0;
@@ -53,7 +54,7 @@ public class CalculadorDeExpresiones{
         System.out.println("Ingrese indice: ");
         indice = scanner.nextInt();
         for (int i = indice; i <= n; i++){
-            resultado = resultado + ((a * b + c) / Calculadora.calcularFactorial(i));
+            resultado = resultado + ((a * b + c) / unaCalcu.calcularFactorial(i));
         }
         System.out.println("El resultado es " + resultado);
     }
