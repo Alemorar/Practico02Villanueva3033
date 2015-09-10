@@ -15,12 +15,6 @@ public class Test {
     
     public static void main(String[] args){
         Calculadora unaCalcu = new Calculadora();
-        unaCalcu.menuOpciones();
-        
-
-        
+        unaCalcu.administrarOpciones();
     }
-    
-    
-    
 }

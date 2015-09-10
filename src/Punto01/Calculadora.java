@@ -96,53 +96,39 @@ public class Calculadora {
         return resultado;        
     }
     
-    public void mostrarPrimo(int numero){
+    public void mostrarPrimos(){
+        int cant = 0;
         for (int i = 0; i < arreglo.length; i++){
-            if (!(arreglo[i] % 2 == 0)){
+            if (arreglo[i] == 1){
                 System.out.println(arreglo[i]);
-            }        
-        }
-    }
-    
-    public int obtenerPrimos(){
-            int cant = 0;
-            for (int i=0; i < arreglo.length; i++){
-                if (arreglo[i]==1){
-                    System.out.println("EL NUMERO " + arreglo[i]+ " ES PRIMO");
-                }else{
-                    cant = 0;
-                    int num = arreglo[i];
-                    for (int j=num; j!=0; j--){
-                        if (num % j == 0){
-                        cant = cant + 1;
+            }else{
+                for (int j = arreglo[i]; j > 0; j--){
+                    if (arreglo[i] % j == 0){
+                    cant = cant + 1;
                     }
-                          
-                    }
-                    if (cant == 2){
-                System.out.println("EL NUMERO " + arreglo[i] + " ES PRIMO");
-                }else{
-                System.out.println("EL NUMERO " + arreglo[i] + " NO ES PRIMO");
                 }
             }
+            if (cant == 2){
+                System.out.println(arreglo[i]);
+                cant = 0;
             }
-        return cant;   
         }
+    }
         
-    public void menuOpciones(){
+    public void administrarOpciones(){
         int opcion;
         do{
             System.out.println("********Menu Calculadora**********");
-            System.out.println("Seleccione el Calculo que desee realizar:");
+            System.out.println("Seleccione el Calculo que desee realizar: 10) carga arreglo test");
             System.out.println("1) Factorial");
             System.out.println("2) Mayor");
             System.out.println("3) Menor");
             System.out.println("4) Promedio");
             System.out.println("5) Mediana");
             System.out.println("6) Mostrar primos");
-            System.out.println("7) Nuevo arreglo");
+            System.out.println("7) Eliminar arreglo");
             System.out.println("8) Visualizar arreglo");
-            System.out.println("9) ....");
-            System.out.println("10) Ordenar arreglo");
+            System.out.println("9) Ordenar arreglo");
             System.out.println("0) Salir de Calculadora.....");
             Scanner scanner = new Scanner(System.in);
             opcion = scanner.nextInt();
@@ -173,7 +159,7 @@ public class Calculadora {
                     System.out.println("La mediana es: " + calcularMediana());
                 }break;
                 case 6:{
-                    obtenerPrimos();                    
+                    mostrarPrimos();
                 }break;
                 case 7:{
                     arreglo = null;
@@ -186,8 +172,22 @@ public class Calculadora {
                         visualizarArreglo(arreglo);
                     }
                 }break;
-                case 10:{
+                case 9:{
                     ordenarArreglo(arreglo);
+                }break;
+                case 10:{
+                    arreglo = new int[5];
+                    arreglo[0] = 2;
+                    arreglo[1] = 3;
+                    arreglo[2] = 7;
+                    arreglo[3] = 17;
+                    arreglo[4] = 23;
+                }break;
+                case 11:{
+                    arreglo = new int [3];
+                    arreglo[0] = 1;
+                    arreglo[1] = 3;
+                    arreglo[2] = 7;
                 }break;
                 default:{
                     System.out.println("Saliendo del system.....");
