@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Punto06.C">
+  <ClassDiagramComponents>
+    <Class name="Departamento" package="Punto06.C" visibility="public" xPosition="539.0" yPosition="235.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="unEmpleado" type="Empleado" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getUnEmpleado" returnType="Empleado" visibility="public"/>
+        <Method name="setUnEmpleado" returnType="void" visibility="public">
+          <Argument type="Empleado" name="unEmpleado"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Empleado" package="Punto06.C" visibility="public" xPosition="85.0" yPosition="45.0">
+      <Fields>
+        <Field name="numEmpleado" type="int" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="entrada" type="Date" visibility="private"/>
+        <Field name="salida" type="Date" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getNumEmpleado" returnType="int" visibility="public"/>
+        <Method name="setNumEmpleado" returnType="void" visibility="public">
+          <Argument type="int" name="numEmpleado"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getEntrada" returnType="Date" visibility="public"/>
+        <Method name="setEntrada" returnType="void" visibility="public">
+          <Argument type="Date" name="entrada"/>
+        </Method>
+        <Method name="getSalida" returnType="Date" visibility="public"/>
+        <Method name="setSalida" returnType="void" visibility="public">
+          <Argument type="Date" name="salida"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="EmpleadoFullTime" package="Punto06.C" visibility="public" xPosition="27.0" yPosition="451.0">
+      <Fields>
+        <Field name="turno" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getTurno" returnType="String" visibility="public"/>
+        <Method name="setTurno" returnType="void" visibility="public">
+          <Argument type="String" name="turno"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="EmpleadoPartTime" package="Punto06.C" visibility="public" xPosition="231.0" yPosition="451.0">
+      <Fields>
+        <Field name="diaTrabaja" type="Date" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getDiaTrabaja" returnType="Date" visibility="public"/>
+        <Method name="setDiaTrabaja" returnType="void" visibility="public">
+          <Argument type="Date" name="diaTrabaja"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Empresa" package="Punto06.C" visibility="public" xPosition="579.0" yPosition="21.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="unDepartamento" type="Departamento" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="unEmpleado" source="Punto06.C.Departamento" target="Punto06.C.Empleado" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Punto06.C.EmpleadoFullTime" target="Punto06.C.Empleado"/>
+    <UseRelation source="Punto06.C.Departamento" target="Punto06.C.Empleado" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="unDepartamento" source="Punto06.C.Empresa" target="Punto06.C.Departamento" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Punto06.C.EmpleadoPartTime" target="Punto06.C.Empleado"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

@@ -267,20 +267,26 @@ public class Calculadora {
                 case 8:{
                     if (arregloInt != null){
                         visualizarArreglo(arregloInt);
-                    }else if (arregloDouble != null){
+                    }
+                    if (arregloDouble != null){
                         visualizarArreglo(arregloDouble);
                     }
+                    if (arregloInt == null || arregloDouble == null){
+                        System.out.println("Debe cargar un arreglo");
+                    }                    
                 }break;
                 case 9:{
                     if (arregloInt != null){
                         ordenarArreglo(arregloInt);
-                    }else if (arregloDouble != null){
+                    }
+                    if (arregloDouble != null){
                         ordenarArreglo(arregloDouble);
-                    }else{
+                    }
+                    if (arregloInt == null || arregloDouble != null){
                         System.out.println("Debe crear un arreglo");
                     }
                 }break;
-                case 10:{
+                case 10:{//arreglos para test
                     arregloInt = new int[5];
                     arregloInt[0] = 2;
                     arregloInt[1] = 3;

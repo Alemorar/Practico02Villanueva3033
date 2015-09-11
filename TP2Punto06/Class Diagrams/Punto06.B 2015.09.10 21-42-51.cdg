@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Punto06.B">
+  <ClassDiagramComponents>
+    <Class name="Cliente" package="Punto06.B" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="unaOrden" type="OrdenCompra" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getUnaOrden" returnType="OrdenCompra" visibility="public"/>
+        <Method name="setUnaOrden" returnType="void" visibility="public">
+          <Argument type="OrdenCompra" name="unaOrden"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="OrdenCompra" package="Punto06.B" visibility="public" xPosition="448.0" yPosition="49.0">
+      <Fields>
+        <Field name="numeroOrden" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getNumeroOrden" returnType="int" visibility="public"/>
+        <Method name="setNumeroOrden" returnType="void" visibility="public">
+          <Argument type="int" name="numeroOrden"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="unaOrden" source="Punto06.B.Cliente" target="Punto06.B.OrdenCompra" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Punto06.B.Cliente" target="Punto06.B.OrdenCompra" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
