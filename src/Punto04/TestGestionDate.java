@@ -7,11 +7,12 @@ package Punto04;
 
 /**
  *
- * @author alejandro
+ * @author alejandro101
  */
-public class TestGestionFecha {
-    
-    public static void main(String[] args){
-        
+public class TestGestionDate {
+
+    public static void main(String[] args) {
+        GestionDate unGestionDate = new GestionDate();
+        unGestionDate.administrarOpciones();
     }
 }
