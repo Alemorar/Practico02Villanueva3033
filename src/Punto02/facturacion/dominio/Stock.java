@@ -5,7 +5,6 @@
  */
 package Punto02.facturacion.dominio;
 
-import Punto02.facturacion.dominio.Producto;
 import java.util.ArrayList;
 
 /**
@@ -16,7 +15,7 @@ public class Stock {
     private ArrayList<Producto> stockProducto;
 
     public Stock() {
-        stockProducto = new ArrayList<Producto>();
+        stockProducto = new ArrayList<>();
     }
     
     public void agregarProducto(Producto producto){
