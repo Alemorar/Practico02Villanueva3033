@@ -27,7 +27,6 @@ public class SistemaFacturacion {
         
         Stock ds = new Stock();
         
-        
         Producto primerProducto = new Producto();
         primerProducto.setCodigo(1);
         primerProducto.setNombre("aaa");
