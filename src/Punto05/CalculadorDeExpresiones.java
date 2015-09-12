@@ -77,7 +77,7 @@ public class CalculadorDeExpresiones{
                     resolverSumatoriaA(hasta);
                 }break;
                 case 2:{
-                    System.out.println("ingrese valor hasta");
+                    System.out.println("ingrese valor n");
                     int hasta = scanner.nextInt();
                     resolverProductoriaB(hasta);
                 }break;
